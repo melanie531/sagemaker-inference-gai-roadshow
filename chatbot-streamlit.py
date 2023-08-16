@@ -154,7 +154,7 @@ class ContentHandler(LLMContentHandler):
         response_json = output.read()
         res = json.loads(response_json)
         print(res)
-        ans = res[0]['generated_text']
+        ans = res['generated_text']
         
         return ans[:ans.rfind("\nUser")].strip()
 
@@ -236,7 +236,7 @@ prompts = {
                   ],
                'file_prompt': [
                    'what does this document talk about?',
-                   'how much was the net sales?',
+                   'how much was the net income?',
                    'based on the financial results, how you do see the future growth of Amazon'
                ],
                 'default': [
